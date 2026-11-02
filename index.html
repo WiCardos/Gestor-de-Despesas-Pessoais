@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Despesas Pessoais</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Login -->
+    <div id="login-section" class="card">
+        <h2>Entrar na Aplicação</h2>
+        <form id="login-form">
+            <input type="text" id="username-input" name="username" placeholder="Insira o seu nome" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <!-- Pós Login -->
+    <div id="app-section" class="hidden">
+        <header>
+            <h1 id="welcome-message">Olá, </h1>
+            <button id="logout-btn">Terminar Sessão</button>
+            <div class="header-info">
+              <!-- Hora ed ata locais -->
+                <span id="current-datetime"></span>
+                <!-- Tema -->
+                <button id="theme-toggle">🌙 Modo Escuro</button>
+            </div>
+        </header>
+
+        <!-- Tempo -->
+        <section id="weather-card" class="card">
+            <h3>Estado do Tempo (Lisboa)</h3>
+            <p id="weather-info">A carregar dados do tempo...</p>
+        </section>
+
+        <!-- Despesas -->
+        <!-- REgistar -->
+        <section class="card">
+            <h3>Registar Nova Despesa</h3>
+            <form id="expense-form">
+                <input type="text" name="descricao" placeholder="Descrição (ex: Almoço)" required>
+                <input type="number" name="valor" step="0.01" placeholder="Valor (€)" required>
+                <select name="categoria" required>
+                    <option value="">Selecione a Categoria</option>
+                    <option value="Alimentação">Alimentação</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <button type="submit">Adicionar Despesa</button>
+            </form>
+        </section>
+
+        <!-- Lista, Filtro e Total de Despesas -->
+        <section class="card">
+            <h3>As Minhas Despesas</h3>
+            <div class="filter-container">
+              <!-- Filtro -->
+                <label for="filter-category">Filtrar por Categoria:</label>
+                <select id="filter-category">
+                    <option value="Todas">Todas</option>
+                    <option value="Alimentação">Alimentação</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+            <!-- Mostra lista -->
+            <ul id="expense-list"></ul>
+            
+            <div class="total-container">
+                <h4>Total Gasto: <span id="total-amount">0.00</span> €</h4>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
