@@ -4,7 +4,7 @@ Aplicação web desenvolvida no âmbito do curso de Software Developer (CESAE Di
 
 ---
 
-## 📋 Sobre o Projeto (Projeto Final 2)
+## 📋 Sobre o Projeto (Projeto Final 2:  “Gestor de Despesas Pessoais”)
 
 O objetivo principal foi criar um sistema completo de gestão de despesas pessoais que inclui as seguintes funcionalidades:
 - **Simulação de Login:** Autenticação por sessão de utilizador com saudação personalizada (*"Olá, Nome!"*).
@@ -40,4 +40,4 @@ O objetivo principal foi criar um sistema completo de gestão de despesas pessoa
 
 1. Clone o repositório para o seu computador:
    ```bash
-   git clone [https://github.com/WiCardos/GestorDespesasPessoais.git](https://github.com/WiCardos/GestorDespesasPessoais.git)
+   git clone [https://github.com/WiCardos/Gestor-de-Despesas-Pessoais.git](https://github.com/WiCardos/Gestor-de-Despesas-Pessoais.git)

@@ -216,13 +216,6 @@ window.addEventListener('DOMContentLoaded', () => {
         iniciarApp(savedUser);
     }
 
-    //Se houver um tema salvo no localstorage
-    // const savedTheme = localStorage.getItem('theme');
-    // if (savedTheme === 'dark') {
-    //     document.body.classList.add('dark-mode');
-    //     themeToggle.textContent = '☀️ Modo Claro';
-    // }
-
     //Mostrar data e hora
     atualizarDataHora();
     //Atualizar data e hora, 1x a cada segundo
