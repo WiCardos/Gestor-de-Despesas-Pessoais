@@ -171,12 +171,16 @@ function mostrarDespesas() {
         const li = document.createElement('li');
 
         li.innerHTML = `
-            <span><strong>${item.descricao}</strong> - ${item.valor.toFixed(2)} € <em>(${item.categoria})</em></span>
+            <span><strong class="descricao"></strong> - <span class="valor"></span> <em class="categoria"></em></span>
             <div class="actions">
                 <button class="btn-edit">Editar</button>
                 <button class="btn-delete">Apagar</button>
             </div>
         `;
+        //Para prevenir XSS
+        li.querySelector('.descricao').textContent = item.descricao;
+        li.querySelector('.valor').textContent = `${item.valor.toFixed(2)}€`;
+        li.querySelector('.categoria').textContent = `(${item.categoria})`;
 
         li.querySelector('.btn-edit').addEventListener('click', () => editarDespesa(realIndex));
         li.querySelector('.btn-delete').addEventListener('click', () => apagarDespesa(realIndex));
