@@ -122,6 +122,7 @@ expenseForm.addEventListener('submit', (e) => {
     const valor = parseFloat(formData.get('valor'));
     const categoria = formData.get('categoria');
 
+    //Redundante porque o FE já valida, mas boa prática
     if (descricao && !isNaN(valor) && categoria) {
         if (editIndex === null) {
             // Criar nova despesa
@@ -209,21 +210,22 @@ function editarDespesa(index) {
 
 
 //Quando a página é carregada.
-window.addEventListener('DOMContentLoaded', () => {
-    //SE existe um user na localstorage
-    const savedUser = localStorage.getItem('user');
-    if (savedUser) {
-        iniciarApp(savedUser);
-    }
 
-    //Mostrar data e hora
-    atualizarDataHora();
-    //Atualizar data e hora, 1x a cada segundo
-    setInterval(atualizarDataHora, 1000);
+//Não estou a fazer nada com o user da localstorage, até o apago no logout.
+// window.addEventListener('DOMContentLoaded', () => {
+//     //SE existe um user na localstorage
+//     const savedUser = localStorage.getItem('user');
+//     if (savedUser) {
+//         iniciarApp(savedUser);
+//     }
+// });
 
-    //Mostar o tempo
-    fetchTempo();
-    //Atualizar o tempo 1x por 1h
-    setInterval(fetchTempo, 60*60*1000);
+//Mostrar data e hora
+atualizarDataHora();
+//Atualizar data e hora, 1x a cada segundo
+setInterval(atualizarDataHora, 1000);
 
-});
+//Mostar o tempo
+fetchTempo();
+//Atualizar o tempo 1x por 1h
+setInterval(fetchTempo, 60*60*1000);
