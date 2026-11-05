@@ -173,10 +173,14 @@ function mostrarDespesas() {
         li.innerHTML = `
             <span><strong>${item.descricao}</strong> - ${item.valor.toFixed(2)} € <em>(${item.categoria})</em></span>
             <div class="actions">
-                <button onclick="editarDespesa(${realIndex})">Editar</button>
-                <button class="btn-delete" onclick="apagarDespesa(${realIndex})">Apagar</button>
+                <button class="btn-edit">Editar</button>
+                <button class="btn-delete">Apagar</button>
             </div>
         `;
+
+        li.querySelector('.btn-edit').addEventListener('click', () => editarDespesa(realIndex));
+        li.querySelector('.btn-delete').addEventListener('click', () => apagarDespesa(realIndex));
+
         expenseList.appendChild(li);
     });
 
@@ -210,16 +214,6 @@ function editarDespesa(index) {
 
 
 //Quando a página é carregada.
-
-//Não estou a fazer nada com o user da localstorage, até o apago no logout.
-// window.addEventListener('DOMContentLoaded', () => {
-//     //SE existe um user na localstorage
-//     const savedUser = localStorage.getItem('user');
-//     if (savedUser) {
-//         iniciarApp(savedUser);
-//     }
-// });
-
 //Mostrar data e hora
 atualizarDataHora();
 //Atualizar data e hora, 1x a cada segundo
